@@ -1,0 +1,3 @@
+{"type":"system","subtype":"local_command","isSidechain":false,"sessionId":"test-fixture-003","uuid":"single-root","parentUuid":null,"timestamp":"2026-03-22T10:00:00.000Z","content":"session start","userType":"external","isMeta":false,"level":"info","version":"2.1.50"}
+{"type":"user","isSidechain":false,"sessionId":"test-fixture-003","uuid":"single-001","parentUuid":"single-root","timestamp":"2026-03-22T10:00:05.000Z","message":{"role":"user","content":"just testing"},"userType":"external"}
+{"type":"progress","sessionId":"test-fixture-003","uuid":"single-prog","parentUuid":"single-001","timestamp":"2026-03-22T10:00:06.000Z","content":"Thinking...","isSidechain":false}

@@ -1,0 +1,64 @@
+language: "en-US"
+tone_instructions: "Be direct, concise, and technically precise. Focus on correctness, security, and architectural issues over style."
+
+reviews:
+  profile: "assertive"
+  high_level_summary: true
+  poem: false
+  sequence_diagrams: false
+  request_changes_workflow: false
+
+  auto_review:
+    enabled: true
+    drafts: false
+    auto_incremental_review: true
+    ignore_title_keywords:
+      - "WIP"
+      - "DO NOT MERGE"
+
+  path_filters:
+    - "!**/*.lock"
+    - "!**/.gitkeep"
+
+  path_instructions:
+    - path: "app/**/*.py"
+      instructions: >
+        This is a FastMCP server backed by asyncpg + Postgres + pgvector.
+        Check for: async correctness (no blocking calls), proper connection
+        acquisition patterns (acquire per call, never hold across calls),
+        correct pgvector usage, and structured logging via structlog.
+    - path: "migrations/**/*.sql"
+      instructions: >
+        Review SQL schema for: correct constraints, appropriate indexes for
+        the query patterns (semantic search via pgvector, FTS via tsvector,
+        graph traversal via recursive CTEs), proper foreign key relationships,
+        and idempotent singleton inserts.
+    - path: "app/pipeline/**/*.py"
+      instructions: >
+        Pipeline code handles async ingestion. Check for: proper error
+        isolation (per-chunk failures shouldn't block other chunks), correct
+        asyncio.Semaphore usage for concurrency control, and graceful
+        handling of API failures (embedding + extraction models).
+
+  tools:
+    ruff:
+      enabled: true
+    gitleaks:
+      enabled: true
+    hadolint:
+      enabled: true
+    sqlfluff:
+      enabled: true
+    shellcheck:
+      enabled: true
+    github-checks:
+      enabled: true
+      timeout_ms: 90000
+
+chat:
+  auto_reply: true
+
+knowledge_base:
+  opt_out: false
+  learnings:
+    scope: "auto"

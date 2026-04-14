@@ -1,0 +1,319 @@
+[
+  {
+    "id": "factual-001",
+    "category": "factual",
+    "query": "Postgres database backend",
+    "tool": "recall",
+    "expected_snippets": ["Postgres", "pgvector"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Should find discussion about choosing Postgres"
+  },
+  {
+    "id": "factual-002",
+    "category": "factual",
+    "query": "entity types in the knowledge graph",
+    "tool": "recall",
+    "expected_snippets": ["Person", "entity"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Design discussion about entity types"
+  },
+  {
+    "id": "factual-003",
+    "category": "factual",
+    "query": "OpenAI embedding model",
+    "tool": "recall",
+    "expected_snippets": ["text-embedding-3-small", "1536"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Embedding model selection discussion"
+  },
+  {
+    "id": "factual-004",
+    "category": "factual",
+    "query": "pipeline status transitions",
+    "tool": "recall",
+    "expected_snippets": ["pending", "chunked", "embedded"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Pipeline architecture discussion"
+  },
+  {
+    "id": "factual-005",
+    "category": "factual",
+    "query": "coreference resolution rules",
+    "tool": "recall",
+    "expected_snippets": ["pronoun", "resolution"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Discussion about pronoun resolution"
+  },
+  {
+    "id": "technical-001",
+    "category": "technical",
+    "query": "asyncpg connection pool",
+    "tool": "recall",
+    "expected_snippets": ["pool", "asyncpg"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Database connection management"
+  },
+  {
+    "id": "technical-002",
+    "category": "technical",
+    "query": "Docker deployment setup",
+    "tool": "recall",
+    "expected_snippets": ["Docker", "deploy"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Deployment discussion"
+  },
+  {
+    "id": "technical-003",
+    "category": "technical",
+    "query": "MCP server registration",
+    "tool": "recall",
+    "expected_snippets": ["MCP"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "MCP server setup discussion"
+  },
+  {
+    "id": "technical-004",
+    "category": "technical",
+    "query": "nix config and flake",
+    "tool": "recall",
+    "expected_snippets": ["nix", "flake"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Nix configuration discussion"
+  },
+  {
+    "id": "technical-005",
+    "category": "technical",
+    "query": "testcontainers pytest fixtures",
+    "tool": "recall",
+    "expected_snippets": ["test"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Test infrastructure discussion"
+  },
+  {
+    "id": "design-001",
+    "category": "design",
+    "query": "reciprocal rank fusion search",
+    "tool": "recall",
+    "expected_snippets": ["hybrid", "rank"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Search design discussion"
+  },
+  {
+    "id": "design-002",
+    "category": "design",
+    "query": "chunk type classification heuristic",
+    "tool": "recall",
+    "expected_snippets": ["decision", "emotional", "correction"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Chunker type assignment design"
+  },
+  {
+    "id": "design-003",
+    "category": "design",
+    "query": "thinking model for entity extraction",
+    "tool": "recall",
+    "expected_snippets": ["extraction", "model"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Entity extraction design decisions"
+  },
+  {
+    "id": "design-004",
+    "category": "design",
+    "query": "review queue for uncertain entities",
+    "tool": "recall",
+    "expected_snippets": ["review", "queue"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Review queue design for uncertain extractions"
+  },
+  {
+    "id": "design-005",
+    "category": "design",
+    "query": "significance scoring system",
+    "tool": "recall",
+    "expected_snippets": ["significance"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Chunk significance scoring design"
+  },
+  {
+    "id": "decision-001",
+    "category": "decision",
+    "query": "decided to go with Postgres instead of SQLite",
+    "tool": "recall",
+    "expected_snippets": ["Postgres"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "chunk_type": "decision",
+    "notes": "Database choice decision"
+  },
+  {
+    "id": "decision-002",
+    "category": "decision",
+    "query": "chose to use pgvector",
+    "tool": "recall",
+    "expected_snippets": ["pgvector"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Vector storage decision"
+  },
+  {
+    "id": "keyword-001",
+    "category": "keyword",
+    "query": "pgvector",
+    "tool": "search",
+    "expected_snippets": ["pgvector"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Exact keyword match for pgvector references"
+  },
+  {
+    "id": "keyword-002",
+    "category": "keyword",
+    "query": "CodeRabbit",
+    "tool": "search",
+    "expected_snippets": ["CodeRabbit"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Code review tool keyword"
+  },
+  {
+    "id": "semantic-001",
+    "category": "semantic",
+    "query": "how memory systems work together",
+    "tool": "recall",
+    "expected_snippets": ["memory"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Semantic match — no exact phrase but concept is discussed"
+  },
+  {
+    "id": "semantic-002",
+    "category": "semantic",
+    "query": "breaking conversations into pieces",
+    "tool": "recall",
+    "expected_snippets": ["chunk"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Semantic match for chunking concept"
+  },
+  {
+    "id": "semantic-003",
+    "category": "semantic",
+    "query": "making search results better with vectors",
+    "tool": "recall",
+    "expected_snippets": ["embedding", "vector"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Embedding/vector search concept"
+  },
+  {
+    "id": "semantic-004",
+    "category": "semantic",
+    "query": "keeping track of what happened in past conversations",
+    "tool": "recall",
+    "expected_snippets": ["conversation", "history"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Conversation history concept"
+  },
+  {
+    "id": "depth-001",
+    "category": "depth",
+    "query": "Postgres schema design",
+    "tool": "recall",
+    "depth": 1,
+    "expected_snippets": [],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Depth 1 should return entity references only (no content)"
+  },
+  {
+    "id": "depth-002",
+    "category": "depth",
+    "query": "Postgres schema design",
+    "tool": "recall",
+    "depth": 2,
+    "expected_snippets": ["schema"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Depth 2 should include chunk content"
+  },
+  {
+    "id": "depth-003",
+    "category": "depth",
+    "query": "Postgres schema design",
+    "tool": "recall",
+    "depth": 3,
+    "expected_snippets": [],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Depth 3 should include full message segments"
+  },
+  {
+    "id": "type-filter-001",
+    "category": "type-filter",
+    "query": "what decisions were made",
+    "tool": "recall",
+    "chunk_type": "decision",
+    "expected_snippets": ["decided"],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Filter to decision chunks only"
+  },
+  {
+    "id": "type-filter-002",
+    "category": "type-filter",
+    "query": "corrections and pushback",
+    "tool": "recall",
+    "chunk_type": "correction",
+    "expected_snippets": [],
+    "unexpected_snippets": [],
+    "min_results": 1,
+    "notes": "Filter to correction chunks only"
+  },
+  {
+    "id": "negation-001",
+    "category": "negation",
+    "query": "what we decided NOT to do",
+    "tool": "recall",
+    "expected_snippets": [],
+    "unexpected_snippets": [],
+    "min_results": 0,
+    "notes": "Negation queries are hard for v1 — may return irrelevant results"
+  },
+  {
+    "id": "failure-001",
+    "category": "failure",
+    "query": "recipe for chocolate cake",
+    "tool": "recall",
+    "expected_snippets": [],
+    "unexpected_snippets": ["cake", "recipe"],
+    "min_results": 0,
+    "notes": "Completely unrelated — recall returns low-scoring noise (no similarity threshold in v1)"
+  },
+  {
+    "id": "failure-002",
+    "category": "failure",
+    "query": "xyzzy_nonexistent_term_12345",
+    "tool": "search",
+    "expected_snippets": [],
+    "unexpected_snippets": [],
+    "min_results": 0,
+    "max_results": 0,
+    "notes": "Nonsense keyword — zero results"
+  }
+]

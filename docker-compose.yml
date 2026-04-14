@@ -1,0 +1,52 @@
+services:
+  vex-brain:
+    build: .
+    container_name: vex-brain
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      VEX_BRAIN_HOST: "0.0.0.0"
+      VEX_BRAIN_PORT: "8000"
+      VEX_BRAIN_DATABASE_URL: "postgresql://vex_brain:${POSTGRES_PASSWORD:-vex_brain}@postgres:5432/vex_brain"
+      VEX_BRAIN_OPENAI_API_KEY: "${VEX_BRAIN_OPENAI_API_KEY}"
+      VEX_BRAIN_ANTHROPIC_API_KEY: "${VEX_BRAIN_ANTHROPIC_API_KEY:-}"
+      VEX_BRAIN_LOG_LEVEL: "INFO"
+    volumes:
+      - cc-sessions:/data/cc-sessions:ro
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - vex-brain
+
+  postgres:
+    image: pgvector/pgvector:pg16
+    container_name: vex-brain-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: vex_brain
+      POSTGRES_USER: vex_brain
+      POSTGRES_PASSWORD: "${POSTGRES_PASSWORD:-vex_brain}"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U vex_brain"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - vex-brain
+
+volumes:
+  pgdata:
+  cc-sessions:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: ${CC_SESSIONS_PATH:-/opt/vex-brain/data/cc-sessions}
+
+networks:
+  vex-brain:
+    driver: bridge

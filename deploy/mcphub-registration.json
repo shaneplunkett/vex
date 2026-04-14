@@ -1,0 +1,6 @@
+{
+  "vex-brain": {
+    "url": "http://vex-brain:8000/mcp",
+    "transport": "http"
+  }
+}

@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+.venv/
+
+# Environment
+.env
+.env.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Nix
+result
+.direnv/
+
+# Local Postgres
+.pgdata/
+
+# Testing
+.pytest_cache/
+htmlcov/
+.coverage
+
+# uv
+# uv.lock is committed for reproducible builds
